@@ -1,9 +1,10 @@
+
 // Code: Passing a structure variable in a function and return an answer which is a pointer
 // Author: Saba Raushan Hussain
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
+
 
 struct Student
 {
@@ -13,33 +14,34 @@ struct Student
   int english;
 };
 
-struct TotalMarks
-{
-	int totalMarks;
-}
+int total(struct Student *s);
 
-main ()
+int main ()
 {
 	struct Student std;
 	int total_score;
 	
 	printf("Enter the student details: \n");
 	printf("Enter the name of the student: \n");
-	scanf("%s",std.name);
+	scanf("%s", std.name);
 	printf("Enter the marks scored in Maths: \n");
-	scanf("%d",&std.math);
+	scanf("%d", &std.math);
 	printf("Enter the marks scored in Science: \n");
-	scanf("%d",&std.science);
+	scanf("%d", &std.science);
 	printf("Enter the marks scored in English: \n");
-	scanf("%d",&std.english);
+	scanf("%d", &std.english);
+	
 	
 	total_score = total(&std); 
-	printf("\n %s scored %d out of 300. \n",std.name,total_score); 
+	printf("\n%s scored %d out of 300.\n", std.name, total_score); 
+	
+	return 0;
 }
 
-total(struct Student *s, struct TotalMarks *t)
+
+int total(struct Student *s)
 {
 	
-	t->totalMarks = s->math + s->science + s->english;
-	return (t->totalMarks);
+	int totalMarks = s->math + s->science + s->english;
+	return totalMarks;
 }
