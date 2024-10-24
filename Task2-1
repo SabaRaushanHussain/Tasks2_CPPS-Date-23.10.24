@@ -1,9 +1,9 @@
+
 //Code: Wap in c to pass a structure variable in a function.
 //Author: Saba Raushan Hussain
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
 
 struct Student
 {
@@ -12,26 +12,31 @@ struct Student
   char grade[5];
 };
 
-main ()
+
+void display(struct Student *s);
+
+int main ()
 {
 	struct Student std;
   
 	printf("Enter the student details: \n");
 	printf("Enter the name of the student: \n");
-	scanf("%s",std.name);
+	scanf("%s", std.name);
 	printf("Enter age: \n");
-	scanf("%d",&std.age);
+	scanf("%d", &std.age);
 	printf("Enter grade: \n");
-	scanf("%s",&std.grade);
+	scanf("%s", std.grade);
   
 	display(&std);
+  
+	return 0;
 }
 
-display(struct Student *s)
+
+void display(struct Student *s)
 {
 	printf("\nStudent Details: \n");
-	printf("Student name: %s \n",s->name);
-	printf("Student age: %d \n",s->age);
-	printf("Student grade: %s \n",s->grade);
-	return(0);
+	printf("Student name: %s \n", s->name);
+	printf("Student age: %d \n", s->age);
+	printf("Student grade: %s \n", s->grade);
 }
