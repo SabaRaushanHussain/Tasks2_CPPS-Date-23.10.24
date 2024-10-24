@@ -1,5 +1,5 @@
 //Code: Wap in c to pass a structure variable in a function.
-Author: Saba Raushan Hussain
+//Author: Saba Raushan Hussain
 
 #include<stdio.h>
 #include<stdlib.h>
